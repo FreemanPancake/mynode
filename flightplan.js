@@ -14,7 +14,8 @@ plan.target('staging', [
     // port: '26397',
     username: username,
     privateKey: '/Users/Freeman/.ssh/id_rsa',
-    agent: process.env.SSH_AUTH_SOCK
+    agent: process.env.SSH_AUTH_SOCK,
+    passphrase: '951021'
   }
 ]);
 plan.target('production', [
@@ -23,7 +24,8 @@ plan.target('production', [
     // port: '26397',
     username: username,
     privateKey: '/Users/Freeman/.ssh/id_rsa',
-    agent: process.env.SSH_AUTH_SOCK
+    agent: process.env.SSH_AUTH_SOCK,
+    passphrase: '951021'
   },
 //add in another server if you have more than one
 // {
