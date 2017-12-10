@@ -1,8 +1,8 @@
 // flightplan.js 
 var plan = require('flightplan');
 
-var appName = 'nodejs_demo';
-var username = 'freeman';
+var appName = 'mynode';
+var username = 'peter';
 var startFile = 'bin/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
@@ -10,14 +10,16 @@ var tmpDir = appName+'-' + new Date().getTime();
 // configuration
 plan.target('staging', [
   {
-    host: '176.122.147.120',
+    host: '165.227.55.105',
+    // port: '26397',
     username: username,
     agent: process.env.SSH_AUTH_SOCK
   }
 ]);
 plan.target('production', [
   {
-    host: '176.122.147.120',
+    host: '165.227.55.105',
+    // port: '26397',
     username: username,
     agent: process.env.SSH_AUTH_SOCK
   },
