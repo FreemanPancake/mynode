@@ -13,7 +13,7 @@ plan.target('staging', [
     host: '165.227.55.105',
     // port: '26397',
     username: username,
-    privateKey: '/Users/Freeman/.ssh/id_rsa.pub',
+    privateKey: '/Users/Freeman/.ssh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   }
 ]);
@@ -22,7 +22,7 @@ plan.target('production', [
     host: '165.227.55.105',
     // port: '26397',
     username: username,
-    privateKey: '/Users/Freeman/.ssh/id_rsa.pub',
+    privateKey: '/Users/Freeman/.ssh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   },
 //add in another server if you have more than one
