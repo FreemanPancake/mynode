@@ -2,7 +2,7 @@
 var plan = require('flightplan');
 
 var appName = 'mynode';
-var username = 'peter';
+var username = 'deploy';
 var startFile = 'bin/www';
 
 var tmpDir = appName+'-' + new Date().getTime();
@@ -10,7 +10,7 @@ var tmpDir = appName+'-' + new Date().getTime();
 // configuration
 plan.target('staging', [
   {
-    host: '165.227.55.105',
+    host: '67.216.194.234',
     // port: '26397',
     username: username,
     privateKey: '/Users/Freeman/.ssh/id_rsa',
@@ -20,7 +20,7 @@ plan.target('staging', [
 ]);
 plan.target('production', [
   {
-    host: '165.227.55.105',
+    host: '67.216.194.234',
     // port: '26397',
     username: username,
     privateKey: '/Users/Freeman/.ssh/id_rsa',
