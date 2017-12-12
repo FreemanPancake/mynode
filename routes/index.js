@@ -14,18 +14,33 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-var title = connection.query('SELECT username from user', function (err, rows, fields) {
-  if (err) throw err;
-  return fields;
+var title = "";
+function getColour(callback)
+{
+    connection.query('SELECT username FROM user', function(err, result)
+    {
+        if (err) 
+            callback(err,null);
+        else
+            callback(null,result[0].username);
+
+    });
+
+}
+
+//call Fn for db query with callback
+getColour(function(err,data){
+        if (err) {
+            // error handling code goes here
+            console.log("ERROR : ",err);            
+        } else {            
+            // code to execute on data retrieval
+            title = data;   
+        }    
+
 });
 
 connection.end();
-
-// var string = app.dbconnect.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
-//   if (err) throw err;
-
-//   console.log('The solution is: ', rows[0].solution);
-// });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
