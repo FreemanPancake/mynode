@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT username from user', function (err, rows, fields) {
+var title = connection.query('SELECT username from user', function (err, rows, fields) {
   if (err) throw err;
   return fields;
 });
@@ -29,7 +29,7 @@ connection.end();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: title });
 });
 
 module.exports = router;
