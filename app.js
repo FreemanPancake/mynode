@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //add this for database connection
-var mysql = require('mysql');
+// var mysql = require('mysql');
 //end database requirement
 
 var index = require('./routes/index');
@@ -29,12 +29,12 @@ app.use('/', index);
 app.use('/users', users);
 
 //set database connection
-app.dbconnect = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  database : 'test_database'
-})
+// app.dbconnect = mysql.createConnection({
+//   host     : 'localhost',
+//   user     : 'root',
+//   password : 'root',
+//   database : 'test_database'
+// });
 //end set database connection
 
 // catch 404 and forward to error handler
