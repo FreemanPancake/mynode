@@ -1,10 +1,7 @@
 var express = require('express');
-// var app = require('../app');
+var mysql = require('mysql');
 var router = express.Router();
 
-
-
-var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -15,31 +12,24 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var title = "";
-function getColour(callback)
-{
-    connection.query('SELECT username FROM user', function(err, result)
-    {
-        if (err) 
-            callback(err,null);
+function getColour(callback) {
+    connection.query('SELECT username FROM user', function (err, result) {
+        if (err)
+            callback(err, null);
         else
-            callback(null,result[0].username);
-
+            callback(null, result[0].username);
     });
-
 }
-
 //call Fn for db query with callback
-getColour(function(err,data){
-        if (err) {
-            // error handling code goes here
-            console.log("ERROR : ",err);            
-        } else {            
-            // code to execute on data retrieval
-            title = data;   
-        }    
-
+getColour(function (err, data) {
+    if (err) {
+        // error handling code goes here
+        console.log("ERROR : ", err);
+    } else {
+        // code to execute on data retrieval
+        title = data;
+    }
 });
-
 connection.end();
 
 /* GET home page. */
