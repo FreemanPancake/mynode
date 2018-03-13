@@ -5,16 +5,13 @@ var router = express.Router();
 // router.get('/', function(req, res, next) {
 //   res.send('this is admin page');
 // });
+var text = "this is a admin page";
 
-/* GET home page. */
+/* GET admin page. */
 router.get('/', function(req, res, next) {
-  res.render('admin', { title: "this is a admin page" });
+  res.render('admin', { text: text });
 });
 
-/* GET admin home page. */
-// router.get('/', function(req, res, next) {
-//     res.render('index', { title: title });
-//   });
 
 
 module.exports = router;
